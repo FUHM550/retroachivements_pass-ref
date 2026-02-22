@@ -3,52 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password refresher</title>
+    <title>Emu-Credential-Guard</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<H1>Password refresher</H1>
-<main class="grid">
-    <nav>
-        <section>
-            <!-- stored emulators -->
-             <div class="strd-emu"></div>
-        </section>
+    <header>
+        <h1>Password Refresher</h1>
 
-        <section>
-            <div class="head">EMULATOR</div>
-            <textarea name="emulator" id="emulator"></textarea>
-            <label for="PATH"></label>
-            <div class="DETECT">DETECT</div>
-            <textarea name="PATH" id=""></textarea>
+        <!-- stock items -->
+        <div class="stdr-emu-bar">
+            <button class="emu-pill active">RETROARCH <span class="dot"></span></button>
+            <button class="emu-pill">DUCKSTATION <span class="dot"></span></button>
+            <button class="emu-pill">PCSX2 <span class="dot"></span></button>
+            <button class="emu-pill">DOLPHIN <span class="dot"></span></button>
+        </div>
 
-            <div class="ADD_EMULATOR">ADD EMULATOR</div>
-            
-            <!-- section -->
+    </header>
 
-            <div class="head"></div>
+    <main class="container">
+        <div class="config-grid">
+            <section class="card">
+                <div class="head">EMULATOR</div>
+                <div class="display-box">RETRO</div>
+            </section>
 
-            <div class="head"></div>
+            <section class="card">
+                <div class="head">PATH</div>
+                <div class="path-container">
+                    <button class="detect-btn">DETECT</button>
+                    <input type="text" value="~/.config/retroarch/" readonly>
+                </div>
+            </section>
+        </div>
 
-            <div class="head">STORED
+        <button class="add-emu-btn">ADD EMULATOR</button>
 
-            <label for="STORED">STORED USER'S:</label>
+        <div class="config-grid">
+            <section class="card">
+                <div class="head">USER</div>
+                <input type="text" placeholder="User Name">
+            </section>
+            <section class="card">
+                <div class="head">PASSWORD</div>
+                <input type="password" placeholder="••••••••">
+            </section>
+        </div>
 
+        <section class="card full-width">
+            <div class="head">STORED</div>
             <select name="STORED" id="STORED">
-            <option value="user0"></option>
-            <option value="user1"></option>
-            <option value="user2"></option>
+                <option value="user1">USER_1</option>
+                <option value="user2">USER_2</option>
             </select>
         </section>
 
-    </nav>    
-    <footer>
-        
-        <div class="del_btn">DELETE STORED USER</div>
-        
-        <div class="refr_btn">REFRESH EMULATORS</div>
-
-    </footer>
-</main>
+        <footer>
+            <button class="del-btn">DELETE STORED USER</button>
+            <button class="refr-btn">REFRESH EMULATORS</button>
+        </footer>
+    </main>
 </body>
 </html>
