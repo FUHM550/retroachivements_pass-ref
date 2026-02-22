@@ -9,38 +9,34 @@
 <body>
     <header>
         <h1>Password Refresher</h1>
-        
-        <!-- this items are supposed to increase when the user adds a path and have nothing when there is no path registered -->
-        <!-- stock items -->
         <div class="stdr-emu-bar">
             <button class="emu-pill active">RETROARCH <span class="dot"></span></button>
             <button class="emu-pill">DUCKSTATION <span class="dot"></span></button>
             <button class="emu-pill">PCSX2 <span class="dot"></span></button>
             <button class="emu-pill">DOLPHIN <span class="dot"></span></button>
         </div>
-
     </header>
 
     <main class="container">
         <div class="config-grid">
             <section class="card">
                 <div class="head">EMULATOR</div>
-                <select name="EMU_TYPE" id="emu-select" class="full-select">
-                    <option value="RETROARCH">RETROARCH</option>
-                    <option value="DUCKSTATION">DUCKSTATION</option>
-                    <option value="PCSX2">PCSX2</option>
-                    <option value="DOLPHIN">DOLPHIN</option>
-                    <option value="OTHER">OTHER (Custom)</option>
-                </select>
-                <input type="text" id="custom-emu-name" placeholder="Enter Name..." style="display:none;">
+                <div class="select-wrapper">
+                    <select name="EMU_TYPE" class="full-select">
+                        <option value="RETROARCH">RETROARCH</option>
+                        <option value="DUCKSTATION">DUCKSTATION</option>
+                        <option value="PCSX2">PCSX2</option>
+                        <option value="DOLPHIN">DOLPHIN</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                    <div class="select-arrow"></div>
+                </div>
             </section>
 
-            <section class="card">
+            <section class="card path-card">
                 <div class="head">PATH</div>
-                <div class="path-container">
-                    <button class="detect-btn">DETECT</button>
-                    <input type="text" class="path-input" value="~/.config/retroarch/" readonly>
-                </div>
+                <button class="detect-btn">DETECT</button>
+                <textarea name="PATH" id="path" class="path-textarea" spellcheck="false">~/.config/retroarch/</textarea>
             </section>
         </div>
 
@@ -49,20 +45,23 @@
         <div class="config-grid">
             <section class="card">
                 <div class="head">USER</div>
-                <input type="text" placeholder="User Name">
+                <input type="text" placeholder="User Name" class="centered-input">
             </section>
             <section class="card">
                 <div class="head">PASSWORD</div>
-                <input type="text" placeholder="••••••••">
+                <input type="text" placeholder="••••••••" class="centered-input">
             </section>
         </div>
 
         <section class="card full-width">
             <div class="head">STORED</div>
-            <select name="STORED" id="STORED">
-                <option value="user1">USER_1</option>
-                <option value="user2">USER_2</option>
-            </select>
+            <div class="select-wrapper">
+                <select name="STORED" id="STORED" class="full-select">
+                    <option value="user1">USER_1</option>
+                    <option value="user2">USER_2</option>
+                </select>
+                <div class="select-arrow"></div>
+            </div>
         </section>
 
         <footer>
