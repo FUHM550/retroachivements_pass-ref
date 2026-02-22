@@ -24,17 +24,23 @@
         <div class="config-grid">
             <section class="card">
                 <div class="head">EMULATOR</div>
-                <div class="select-wrapper">
-                    <select name="EMU_TYPE" class="full-select">
+                
+                <div id="emu-select-container" class="select-wrapper">
+                    <select name="EMU_TYPE" id="emu-select" class="full-select">
                         <option value="RETROARCH">RETROARCH</option>
                         <option value="DUCKSTATION">DUCKSTATION</option>
                         <option value="PCSX2">PCSX2</option>
-                        <option value="DOLPHIN">DOLPHIN</option>
-                        <option value="OTHER">OTHER</option>
+                        <option value="OTHER">OTHER...</option>
                     </select>
                     <div class="select-arrow"></div>
                 </div>
+
+                <div id="emu-custom-container" style="display: none; position: relative;">
+                    <input type="text" id="emu-custom-input" class="centered-input" placeholder="Emulator Name...">
+                    <button id="cancel-other" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer;">✕</button>
+                </div>
             </section>
+            
 
             <section class="card path-card">
                 <div class="head">PATH</div>
