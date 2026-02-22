@@ -9,7 +9,8 @@
 <body>
     <header>
         <h1>Password Refresher</h1>
-
+        
+        <!-- this items are supposed to increase when the user adds a path and have nothing when there is no path registered -->
         <!-- stock items -->
         <div class="stdr-emu-bar">
             <button class="emu-pill active">RETROARCH <span class="dot"></span></button>
@@ -24,14 +25,21 @@
         <div class="config-grid">
             <section class="card">
                 <div class="head">EMULATOR</div>
-                <div class="display-box">RETRO</div>
+                <select name="EMU_TYPE" id="emu-select" class="full-select">
+                    <option value="RETROARCH">RETROARCH</option>
+                    <option value="DUCKSTATION">DUCKSTATION</option>
+                    <option value="PCSX2">PCSX2</option>
+                    <option value="DOLPHIN">DOLPHIN</option>
+                    <option value="OTHER">OTHER (Custom)</option>
+                </select>
+                <input type="text" id="custom-emu-name" placeholder="Enter Name..." style="display:none;">
             </section>
 
             <section class="card">
                 <div class="head">PATH</div>
                 <div class="path-container">
                     <button class="detect-btn">DETECT</button>
-                    <input type="text" value="~/.config/retroarch/" readonly>
+                    <input type="text" class="path-input" value="~/.config/retroarch/" readonly>
                 </div>
             </section>
         </div>
@@ -45,7 +53,7 @@
             </section>
             <section class="card">
                 <div class="head">PASSWORD</div>
-                <input type="password" placeholder="••••••••">
+                <input type="text" placeholder="••••••••">
             </section>
         </div>
 
